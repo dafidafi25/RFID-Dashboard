@@ -6,10 +6,8 @@ import {
   CardHeader,
   Stack,
   Button,
-  Snackbar,
 } from "@mui/material";
 import React, { useState } from "react";
-import Swal from "sweetalert";
 import axios from "axios";
 
 //  onClick={() => {
@@ -27,7 +25,6 @@ const baseApi = "https://cd1b-158-140-163-210.ngrok.io";
 const CardForm: React.FC = () => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
-  const [username, setUsername] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [plateNumber, setPlateNumber] = useState<string>("");
@@ -83,7 +80,7 @@ const CardForm: React.FC = () => {
   const handleReset = () => {
     setFirstName("");
     setLastName("");
-    setUsername("");
+    // setUsername("");
     setPhone("");
     setEmail("");
     setPlateNumber("");
