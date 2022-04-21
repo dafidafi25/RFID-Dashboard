@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import Dashboard from "./pages";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Layout from "./Components/Layout/Layout";
+
+import RegisterPage from "./pages/Pendaftaran";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +12,9 @@ ReactDOM.render(
       <Routes>
         <Route path="/">
           <Route index element={<Dashboard />} />
+        </Route>
+        <Route path="/pendaftaran">
+          <Route index element={<RegisterPage />} />
         </Route>
       </Routes>
     </Router>

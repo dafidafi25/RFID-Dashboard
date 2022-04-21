@@ -14,7 +14,7 @@ import React from "react";
 
 interface NavBarProps {}
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = [""];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar: React.FC<NavBarProps> = () => {
@@ -50,7 +50,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            LOGO
+            Tugas Akhir Rio - 217102593
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -82,11 +82,12 @@ const NavBar: React.FC<NavBarProps> = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              {pages &&
+                pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                ))}
             </Menu>
           </Box>
           <Typography
@@ -95,7 +96,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            LOGO
+            Tugas Akhir Rio - 217102593
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
