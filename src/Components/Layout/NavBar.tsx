@@ -14,8 +14,8 @@ import React from "react";
 
 interface NavBarProps {}
 
-const pages = [""];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["Home", "Register"];
+const settings = ["Home", "Register"];
 
 const NavBar: React.FC<NavBarProps> = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -49,6 +49,9 @@ const NavBar: React.FC<NavBarProps> = () => {
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            onClick={() => {
+              window.location.href = "/";
+            }}
           >
             Tugas Akhir Rio - 217102593
           </Typography>
@@ -85,7 +88,24 @@ const NavBar: React.FC<NavBarProps> = () => {
               {pages &&
                 pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => {
+                        switch (page) {
+                          case "Home":
+                            window.location.href = "/";
+                            break;
+                          case "Register":
+                            window.location.href = "/pendaftaran";
+                            break;
+
+                          default:
+                            break;
+                        }
+                      }}
+                    >
+                      {page}
+                    </Typography>
                   </MenuItem>
                 ))}
             </Menu>
@@ -95,11 +115,14 @@ const NavBar: React.FC<NavBarProps> = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            onClick={() => {
+              window.location.href = "/";
+            }}
           >
             Tugas Akhir Rio - 217102593
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -107,13 +130,13 @@ const NavBar: React.FC<NavBarProps> = () => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -134,7 +157,24 @@ const NavBar: React.FC<NavBarProps> = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography
+                    textAlign="center"
+                    onClick={() => {
+                      switch (setting) {
+                        case "Home":
+                          window.location.href = "/";
+                          break;
+                        case "Register":
+                          window.location.href = "/pendaftaran";
+                          break;
+
+                        default:
+                          break;
+                      }
+                    }}
+                  >
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

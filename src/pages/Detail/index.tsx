@@ -1,19 +1,19 @@
 import { Box, Card, CardHeader, Container } from "@mui/material";
-import NavBar from "../Components/Layout/NavBar";
-import LogTable from "../Components/Table/logTable";
+import NavBar from "../../Components/Layout/NavBar";
+import DetailTable from "../../Components/Table/detailtable";
 
-const Dashboard: React.FC = () => {
+const Detail: React.FC = () => {
   return (
     <>
       <NavBar />
       <Container>
         <Card sx={{ marginTop: 5 }}>
           <CardHeader title="Log Akses" />
-          <LogTable />
+          <DetailTable />
         </Card>
       </Container>
     </>
   );
 };
 
-export default Dashboard;
+export default Detail;
