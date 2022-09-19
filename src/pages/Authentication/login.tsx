@@ -76,6 +76,7 @@ const reducer = (state: State, action: Action): State => {
         isButtonDisabled: action.payload,
       };
     case "loginSuccess":
+      localStorage.user = "admin";
       window.location.href = "/";
       return {
         ...state,

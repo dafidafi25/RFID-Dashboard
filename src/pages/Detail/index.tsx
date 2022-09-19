@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Box, Card, CardHeader, Container } from "@mui/material";
 import NavBar from "../../Components/Layout/NavBar";
 import DetailTable from "../../Components/Table/detailtable";
 
 const Detail: React.FC = () => {
+  useEffect(() => {
+    if (localStorage.user == null || localStorage.user == undefined)
+      window.location.href = "/home";
+  }, []);
   return (
     <>
       <NavBar />

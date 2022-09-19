@@ -96,6 +96,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                             window.location.href = "/";
                             break;
                           case "Logout":
+                            localStorage.clear();
                             window.location.href = "/login";
                             break;
 
@@ -166,6 +167,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                           break;
 
                         case "Logout":
+                          localStorage.clear();
                           window.location.href = "/login";
                           break;
 
