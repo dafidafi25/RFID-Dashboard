@@ -30,6 +30,11 @@ export default function DetailTable() {
 
   React.useEffect(() => {
     let isApiSubcribed = false;
+    const loadApi = async () => {
+      const baseApi = await getEnvVariable();
+      const dataLog: Response = await axios.get(`${baseApi}/rfid/get/${id}`);
+      setRows(dataLog.data);
+    };
 
     if (!isApiSubcribed) loadApi();
 
@@ -37,12 +42,6 @@ export default function DetailTable() {
       isApiSubcribed = true;
     };
   }, []);
-
-  const loadApi = async () => {
-    const baseApi = await getEnvVariable();
-    const dataLog: Response = await axios.get(`${baseApi}/rfid/get/${id}`);
-    setRows(dataLog.data);
-  };
 
   return (
     <TableContainer component={Paper}>

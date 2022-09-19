@@ -14,8 +14,8 @@ import React from "react";
 
 interface NavBarProps {}
 
-const pages = ["Home", "Register"];
-const settings = ["Home", "Register"];
+const pages = ["Home", "Logout"];
+const settings = ["Home", "Logout"];
 
 const NavBar: React.FC<NavBarProps> = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -95,8 +95,8 @@ const NavBar: React.FC<NavBarProps> = () => {
                           case "Home":
                             window.location.href = "/";
                             break;
-                          case "Register":
-                            window.location.href = "/pendaftaran";
+                          case "Logout":
+                            window.location.href = "/login";
                             break;
 
                           default:
@@ -164,8 +164,9 @@ const NavBar: React.FC<NavBarProps> = () => {
                         case "Home":
                           window.location.href = "/";
                           break;
-                        case "Register":
-                          window.location.href = "/pendaftaran";
+
+                        case "Logout":
+                          window.location.href = "/login";
                           break;
 
                         default:
