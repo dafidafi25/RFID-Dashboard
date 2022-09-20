@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       display: "flex",
       flexWrap: "wrap",
-      width: 400,
+      width: 300,
       margin: `${theme.spacing(0)} auto`,
     },
     loginBtn: {

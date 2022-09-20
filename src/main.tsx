@@ -15,9 +15,6 @@ ReactDOM.render(
         <Route path="/">
           <Route index element={<Dashboard />} />
         </Route>
-        <Route path="/pendaftaran">
-          <Route index element={<RegisterPage />} />
-        </Route>
         <Route path="/detail/:id">
           <Route index element={<Detail />} />
         </Route>
